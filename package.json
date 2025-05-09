@@ -1,0 +1,18 @@
+{
+  "name": "kpu-mcp",
+  "version": "0.1.0",
+  "description": "KeywordsPeopleUse MCP Server",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.11.1",
+    "dotenv": "^16.5.0",
+    "zod": "^3.24.4"
+  }
+}
