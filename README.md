@@ -9,7 +9,43 @@ A Model Context Protocol (MCP) server implementation that integrates with [Keywo
 - Get Reddit and Quora questions
 - Get Semantic Keywords
 
-## Installation
+## Remote connection
+
+Make sure you have Node.js and npm installed on your computer.
+
+`node --version`
+
+`npm --version`
+
+If not, go to [Node.js official website](https://nodejs.org/) to download and install it.
+
+### Connect Claude Desktop to your MCP server
+
+You can connect to your remote MCP server from local MCP clients, by using the [mcp-remote proxy](https://www.npmjs.com/package/mcp-remote).
+
+To connect to your MCP server from Claude Desktop, follow [Anthropic's Quickstart](https://modelcontextprotocol.io/quickstart/user) and within Claude Desktop go to Settings > Developer > Edit Config.
+
+Update with this configuration (replace YOUR_API_KEY with your API key):
+
+```json
+{
+  "mcpServers": {
+    "keywordspeopleuse": {
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "https://mcp-keywordspeopleuse.com/sse",
+        "--header",
+        "Authorization:YOUR_API_KEY"
+      ]
+    }
+  }
+}
+```
+
+Restart Claude and you should see the tools become available.
+
+## Local Installation
 
 ### Clone from Github
 
